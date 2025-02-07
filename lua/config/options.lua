@@ -8,3 +8,18 @@ local opt = vim.opt
 --opt.shiftwidth = 4 -- Use 4 spaces for indentation
 vim.opt.formatoptions:append("t") -- Enable text wrapping while typing
 opt.textwidth = 100 -- Wrap lines at 80 characters
+-- set clipboard
+-- Check if we're on WSL
+if vim.fn.has("wsl") == 1 then
+  vim.g.clipboard = {
+    name = "wsl_clipboard",
+    copy = {
+      ["+"] = "clip.exe",
+      ["*"] = "clip.exe",
+    },
+    paste = {
+      ["+"] = "powershell.exe Get-Clipboard | Set-Content -Path /dev/stdout",
+      ["*"] = "powershell.exe Get-Clipboard | Set-Content -Path /dev/stdout",
+    },
+  }
+end
