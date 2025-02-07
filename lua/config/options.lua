@@ -3,7 +3,8 @@
 -- Add any additional options here
 --
 -- set the Default tab behavior
---local opt = vim.opt
+local opt = vim.opt
 --opt.tabstop = 4 -- Display tab characters as 4 spaces
 --opt.shiftwidth = 4 -- Use 4 spaces for indentation
---opt.textwidth = 80 -- Wrap lines at 80 characters
+vim.opt.formatoptions:append("t") -- Enable text wrapping while typing
+opt.textwidth = 100 -- Wrap lines at 80 characters
