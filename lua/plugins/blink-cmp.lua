@@ -24,6 +24,6 @@ return {
 
   keymaps = {
     preset = "default", --default accept is ctrl y
-    ["<CR>"] = {},
+    ["<CR>"] = nil,
   },
 }
