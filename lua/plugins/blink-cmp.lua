@@ -6,6 +6,10 @@ return {
   opts = function(_, opts)
     vim.b.completion = false
 
+    opts.keymap = {
+      preset = "default", --default accept is ctrl, unbind enter because it is annoying
+      ["<CR>"] = {}, --unbind enter as auto completion because it is annoying
+    }
     Snacks.toggle({
       name = "Completion",
       get = function()
@@ -16,14 +20,6 @@ return {
       end,
     }):map("<leader>t")
 
-    opts.enabled = function()
-      return vim.b.completion ~= false
-    end
     return opts
   end,
-
-  keymaps = {
-    preset = "default", --default accept is ctrl y
-    ["<CR>"] = nil,
-  },
 }
