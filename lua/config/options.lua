@@ -4,10 +4,10 @@
 --
 -- set the Default tab behavior
 local opt = vim.opt
---opt.tabstop = 4 -- Display tab characters as 4 spaces
---opt.shiftwidth = 4 -- Use 4 spaces for indentation
+opt.tabstop = 4 -- Display tab characters as 4 spaces
+opt.shiftwidth = 4 -- Use 4 spaces for indentation
 vim.opt.formatoptions:append("t") -- Enable text wrapping while typing
-opt.textwidth = 100 -- Wrap lines at 80 characters
+opt.textwidth = 120 -- Wrap lines at 120 characters
 -- set clipboard
 -- Check if we're on WSL
 if vim.fn.has("wsl") == 1 then
